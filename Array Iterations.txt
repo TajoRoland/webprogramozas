@@ -1,0 +1,106 @@
+forEach() A forEach() metódus minden egyes tömbbeli elemre meghív egy megadott függvényt.
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach(function(number) {
+console.log(number);
+});
+
+map() A map() metódus létrehoz egy új tömböt, amelyben a megadott függvény által visszaadott értékek találhatók az eredeti tömb elemeire alkalmazva.
+
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(function(number) {
+return number * 2;
+});
+console.log(doubled); // [2, 4, 6, 8, 10]
+
+filter() A filter() metódus egy új tömböt hoz létre azokkal az elemekkel, amelyek megfelelnek a megadott feltételnek.
+
+const numbers = [1, 2, 3, 4, 5];
+const evens = numbers.filter(function(number) {
+return number % 2 === 0;
+});
+console.log(evens); // [2, 4]
+
+reduce() A reduce() metódus az elemeket egyetlen értékké redukálja egy megadott függvény segítségével.
+
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce(function(total, number) {
+return total + number;
+}, 0);
+console.log(sum); // 15
+
+reduceRight() A reduceRight() metódus hasonló a reduce() metódushoz, de a tömb utolsó elemétől az elsőig haladva végzi a műveletet.
+
+const numbers = [1, 2, 3, 4, 5];
+const product = numbers.reduceRight(function(total, number) {
+return total * number;
+}, 1);
+console.log(product); // 120
+
+every() Az every() metódus ellenőrzi, hogy a tömb összes eleme megfelel-e egy megadott feltételnek, és logikai értéket ad vissza.
+
+const numbers = [1, 2, 3, 4, 5];
+const allPositive = numbers.every(function(number) {
+return number > 0;
+});
+console.log(allPositive); // true
+
+some() A some() metódus ellenőrzi, hogy a tömb legalább egy eleme megfelel-e egy megadott feltételnek, és logikai értéket ad vissza.
+
+const numbers = [1, 2, 3, 4, 5];
+const hasNegative = numbers.some(function(number) {
+return number < 0;
+});
+console.log(hasNegative); // false
+
+indexOf() Az indexOf() metódus megkeresi egy elem első előfordulásának indexét a tömbben, és -1-et ad vissza, ha az elem nem található.
+
+const fruits = ["apple", "banana", "orange"];
+const index = fruits.indexOf("banana");
+console.log(index); // 1
+
+lastIndexOf() A lastIndexOf() metódus megkeresi egy elem utolsó előfordulásának indexét a tömbben, és -1-et ad vissza, ha az elem nem található.
+
+const numbers = [1, 2, 3, 1, 2, 3];
+const index = numbers.lastIndexOf(2);
+console.log(index); // 4
+
+find() A find() metódus visszaadja a tömb első olyan elemét, amely megfelel a megadott feltételnek.
+
+const numbers = [1, 2, 3, 4, 5];
+const found = numbers.find(function(number) {
+return number > 3;
+});
+console.log(found); // 4
+
+findIndex() A findIndex() metódus visszaadja a tömb első olyan elemének indexét, amely megfelel a megadott feltételnek.
+
+const numbers = [1, 2, 3, 4, 5];
+const index = numbers.findIndex(function(number) {
+return number > 3;
+});
+console.log(index); // 3
+
+entries() Az entries() metódus visszaad egy új Array Iterator objektumot, amely az egyes tömbelemek kulcs-érték párjait tartalmazza.
+
+const fruits = ["apple", "banana", "orange"];
+const iterator = fruits.entries();
+for (let entry of iterator) {
+console.log(entry);
+}
+// [0, "apple"]
+// [1, "banana"]
+// [2, "orange"]
+
+keys() A keys() metódus visszaad egy új Array Iterator objektumot, amely a tömb kulcsait (indexeit) tartalmazza.
+
+const fruits = ["apple", "banana", "orange"];
+const iterator = fruits.keys();
+for (let key of iterator) {
+console.log(key);
+}
+// 0
+// 1
+// 2
+
+values() A values() metódus visszaad egy új Array Iterator objektumot, amely a tömb ért

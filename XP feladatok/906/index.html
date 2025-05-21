@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Függvények és eljárások</title>
+    <style>
+        h1
+        {
+            text-align: center;
+        }
+        div
+        {
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tömb feltöltése majd visszadása</h1>
+    <div id="tomb"></div>
+    <script>
+        let temp = [];
+        for (let i = 1; i <= 20; i++) {
+            temp.push(i);
+        }
+        document.getElementById("tomb").innerHTML = "A tömb elemei: " + temp.join(", ");
+    </script>
+</body>
+</html>

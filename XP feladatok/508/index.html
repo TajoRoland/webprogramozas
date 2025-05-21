@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterációs feladatok</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        p
+        {
+            text-align: center;
+        }
+        div
+        {
+            text-align: center;
+            font-size: 20px;
+            color: red;
+        }
+        input
+        {
+            text-align: center;
+            font-size: 20px;
+            width: 200px;
+        }
+        button
+        {
+            text-align: center;
+            font-size: 20px;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1><strong>Feladat:</strong> Szám bekérése 0 végjelig majd átlagolása</h1>
+    <input type="number" name="" id="szamBekeresek" placeholder="Kérek egy számot!">
+    <button onclick="hozzaad()">Hozzáad</button>
+    <button onclick="atlag()">Átlag kiszámítása</button>
+
+    <p id="lista"></p>
+    <div id="eredmeny"></div>
+ <script>
+    let szamok = [];
+
+    function hozzaad() {
+    let beirtSzam = Number(document.getElementById("szamBekeresek").value);
+    szamok.push(beirtSzam);
+    if (beirtSzam <= 0) 
+    {
+        document.getElementById("eredmeny").innerText = "Kérem adjon meg egy számot!";
+        szamok.pop(); // forrás https://www.w3schools.com/jsref/jsref_pop.asp
+    }
+    else
+    {
+        document.getElementById("eredmeny").innerText = "A szám hozzáadva: " + beirtSzam;
+    }
+    document.getElementById("lista").innerText = "Eddigi számok: " + szamok.join(", ");
+    document.getElementById("szamBekeresek").value = ""; 
+    document.getElementById("szamBekeresek").focus(); // kurzor maradjon ott forrás https://www.w3schools.com/jsref/met_html_focus.asp
+}
+
+function atlag() {
+      let osszeg = 0;
+      for (let i = 0; i < szamok.length; i++) {
+        osszeg += szamok[i];
+      }
+      let atlag = osszeg / szamok.length;
+      document.getElementById("eredmeny").innerText = "A számok átlaga: " + atlag.toFixed(2); // ahonnan néztem https://www.w3schools.com/jsref/jsref_tofixed.asp
+    }
+// Ez jó sokáig tartott, de végül sikerült megcsinálni, azt hittem egyszerűbb lesz, de nem XD...
+ </script>
+</body>
+</html>

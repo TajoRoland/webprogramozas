@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Függvények és eljárások</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        #eredmeny {
+            text-align: center;
+            margin: 0px auto;
+            padding: 10px 20px;
+        }
+        button {
+            display: block;
+            margin: 0px auto;
+            padding: 10px 20px;
+        }
+        input {
+            display: block;
+            margin: 5px auto;
+            padding: 10px 20px;
+            width: 100px;
+        }
+        #eredmeny 
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Függvények és eljárások</h1>
+    <div id="eredmeny"></div>
+    <input type="number" id="szam1" placeholder="Első szám">
+    <input type="number" id="szam2" placeholder="Második szám">
+    <button onclick="osszead()">Add össze!</button>
+    <script>
+        function osszead() {
+            let szam1 = parseInt(document.getElementById("szam1").value);
+            let szam2 = parseInt(document.getElementById("szam2").value);
+            let eredmeny = szam1 + szam2;
+            document.getElementById("eredmeny").innerHTML = "Az összeg: " + eredmeny;
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterációs tevékenységek</title>
+    <style>
+        #eredmeny {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+            color: #000;
+            border: 5px solid #000;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Számok kiiratása 1-50-ig!</h1>
+    <span>
+    <div id="eredmeny"></div>
+    </span>
+    <script>
+        for (let i = 1; i <= 50; i++) {
+            document.getElementById("eredmeny").innerHTML += i + " ";
+        }
+    </script>
+</body>
+</html>

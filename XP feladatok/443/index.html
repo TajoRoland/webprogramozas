@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterációs feladatok</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+            button {
+            display: block;
+            margin: 0px auto;
+            padding: 10px 20px;
+        }
+        input {
+            display: block;
+            margin: 5px auto;
+            padding: 10px 20px;
+            width: 200px;
+        }
+        #eredmeny
+        {
+            text-align: center;
+            margin: 0px auto;
+            padding: 10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Melyik számra gondoltam?</h1>
+    <input type="number" id="szam" placeholder="Kérem adja meg a számot!">
+    <button id="ellenorzes">Beküldés</button>
+    <div id="eredmeny"></div>
+    <script>
+        document.getElementById("ellenorzes").onclick = function() {
+            let szam = document.getElementById("szam").value;
+            let randomSzam = Math.floor(Math.random() * 10) + 1;
+            let eredmeny = document.getElementById("eredmeny");
+            console.log("A gondolt szám: " + randomSzam);
+            if (szam == randomSzam) {
+                eredmeny.innerHTML = "Helyes válasz!";
+            } else {
+                eredmeny.innerHTML = "Hibás válasz! Próbálja újra.";
+            }
+        }
+    </script>
+</body>
+</html>

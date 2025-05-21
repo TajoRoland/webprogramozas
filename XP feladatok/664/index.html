@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karakterek</title>
+    <style>
+        h1
+        {
+            text-align: center;
+        }
+        #eredmeny
+        {
+            text-align: center;
+        }
+        button
+        {
+            display: block;
+            margin: 0px auto;
+            padding: 10px 20px;
+        }
+        input
+        {
+            display: block;
+            margin: 5px auto;
+            padding: 10px 20px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bináris szám bekérése</h1>
+    <input type="number" name="" id="binarisSzam" placeholder="Kérem adja meg a bináris számot!">
+    <button id="szamitas">Számítás</button>
+    <span><div id="eredmeny"></div></span>
+    <script>
+        document.getElementById("szamitas").onclick = function() {
+            let binarisSzam = document.getElementById("binarisSzam").value;
+            let decimalisSzam = parseInt(binarisSzam, 2);
+            document.getElementById("eredmeny").innerHTML = "A bináris szám decimális értéke: " + decimalisSzam;
+        }
+    </script>
+</body>
+</html>

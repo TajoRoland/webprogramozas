@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tömbkezelés</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        div {
+            text-align: center;
+            font-size: 20px;
+            color: red;
+        }
+        input {
+            text-align: center;
+            font-size: 20px;
+            width: 200px;
+        }
+        button {
+            text-align: center;
+            font-size: 20px;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="szamol()">Számolás indítása</button>
+
+    <div id="eredmeny"></div>
+
+ <script>
+    function szamol() {
+      let szamok = [4, 8, 15, 16, 23, 42, 1, 5];
+      let osszeg = 0;
+      for (let i = 0; i < szamok.length; i++) {
+        osszeg += szamok[i];
+      }
+      document.getElementById("eredmeny").innerText = "Az összeg: " + osszeg;
+    }
+ </script>
+</body>
+</html>

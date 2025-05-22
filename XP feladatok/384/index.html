@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szekventációs feladat</title>
+    <style>
+        body
+        {
+            text-align: center;
+        }
+        div#cosinus
+        {
+            font-size: 20px;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            display: inline;
+        }
+        div#gyok
+        {
+            font-size: 20px;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            display: inline;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="cosinus"></div>
+    <br>
+    <div id="gyok"></div>
+    <br>
+    <input type="number" name="" id="szamBekeres" placeholder="Kérem adjon meg egy számot!">
+    <button type="button" id="gomb"></button>
+    <script>
+        const gomb = document.getElementById("gomb");
+        const szamBekeres = document.getElementById("szamBekeres");
+        const cosinus = document.getElementById("cosinus");
+        const gyok = document.getElementById("gyok");
+        gomb.innerHTML = "Kérem számítson!";
+        gomb.addEventListener("click", function() {
+            //console.log(szamBekeres.value);
+            let szam = parseInt(szamBekeres.value);
+            szam = Math.cos(szam);
+            szam = Math.sqrt(szam);
+            let cosinus = document.getElementById("cosinus").innerHTML = "A szám cosinusa: " + szam;
+            let gyok = document.getElementById("gyok").innerHTML = "A szám gyöke: " + szam;
+        })
+    </script>
+</body>
+</html>

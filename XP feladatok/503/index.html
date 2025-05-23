@@ -21,7 +21,10 @@
     </span>
     <script>
         for (let i = 1; i <= 50; i++) {
-            document.getElementById("eredmeny").innerHTML += i + " ";
+            document.getElementById("eredmeny").innerHTML += i;
+            if (i < 50) {
+                document.getElementById("eredmeny").innerHTML += ",";
+            }
         }
     </script>
 </body>

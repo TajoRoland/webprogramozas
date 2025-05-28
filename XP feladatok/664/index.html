@@ -29,16 +29,20 @@
     </style>
 </head>
 <body>
-    <h1>Bináris szám bekérése</h1>
-    <input type="number" name="" id="binarisSzam" placeholder="Kérem adja meg a bináris számot!">
-    <button id="szamitas">Számítás</button>
-    <span><div id="eredmeny"></div></span>
-    <script>
-        document.getElementById("szamitas").onclick = function() {
-            let binarisSzam = document.getElementById("binarisSzam").value;
-            let decimalisSzam = parseInt(binarisSzam, 2);
-            document.getElementById("eredmeny").innerHTML = "A bináris szám decimális értéke: " + decimalisSzam;
-        }
-    </script>
+    <h1>Bináris szám</h1>
+    <input id="binarisSzam" placeholder="Írj be 0-t és 1-et">
+    <button onclick="szamitas()">Számítás</button>
+    <div id="eredmeny"></div>
+<script>
+    function szamitas() {
+      let szam = document.getElementById("binarisSzam").value;
+      if (/^[01]+$/.test(szam)) {
+        let dec = parseInt(szam, 2);
+        document.getElementById("eredmeny").innerHTML = "Decimális: " + dec;
+      } else {
+        document.getElementById("eredmeny").innerHTML = "Csak 0 és 1 lehet!";
+      }
+    }
+</script>
 </body>
 </html>

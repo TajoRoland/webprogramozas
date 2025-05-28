@@ -41,7 +41,9 @@
             let szam1 = parseInt(document.getElementById("szam1").value);
             let szam2 = parseInt(document.getElementById("szam2").value);
             let eredmeny = szam1 + szam2;
-            document.getElementById("eredmeny").innerHTML = "Az összeg: " + eredmeny;
+            //console.log(eredmeny); teszt
+            document.getElementById("eredmeny").innerHTML = "Az összeadás eredménye: " + eredmeny; // Eredmény kiírása a div-be
+            return eredmeny; // Visszaadja az eredményt
         }
 
         

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body 
+        {
+            text-align: center;
+        }
+        #eredmeny img 
+        {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="dobas()">Dobás</button>
+    <div id="eredmeny"></div>
+    <script>
+        function dobas() {
+            let dobokocka = Math.floor(Math.random() * 6) + 1;
+            let eredmenyDiv = document.getElementById('eredmeny');
+            let kep = "";
+            if (dobokocka === 1) kep = "kepek/dice_one.png";
+            else if (dobokocka === 2) kep = "kepek/dice_two.png";
+            else if (dobokocka === 3) kep = "kepek/dice_three.png";
+            else if (dobokocka === 4) kep = "kepek/dice_four.png";
+            else if (dobokocka === 5) kep = "kepek/dice_five.png";
+            else if (dobokocka === 6) kep = "kepek/dice_six.png";
+            eredmenyDiv.innerHTML =
+                'A dobás eredménye: ' + dobokocka + '<br>' +
+                '<img src="' + kep + '" alt="' + dobokocka + '">';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Feladat 1201 hozzon létre egy villogó kört
+        function villogoKor() {
+            const kor = document.createElement('div');
+            kor.style.width = '100px';
+            kor.style.height = '100px';
+            kor.style.borderRadius = '50%';
+            kor.style.backgroundColor = 'red';
+            kor.style.position = 'absolute';
+            kor.style.top = '50%';
+            kor.style.left = '50%';
+            kor.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(kor);
+
+            setInterval(() => { // https://www.w3schools.com/jsref/met_win_setinterval.asp
+                kor.style.opacity = kor.style.opacity === '1' ? '0' : '1';
+            }, 1000);
+        }
+
+        villogoKor();
+    </script>
+</body>
+</html>

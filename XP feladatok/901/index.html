@@ -20,13 +20,18 @@
 
     </style>
 </head>
-<body>
+<body onload="adataim()">">
     <h1>Személyes adataim</h1>
     <div id="nevem">Név:</div>
     <div id="telepules">Település:</div>
     <script>
-        document.getElementById("nevem").innerHTML += " Valenta Roland Milán";
-        document.getElementById("telepules").innerHTML += " Görgeteg";
+        function adataim()
+        {
+            let nevem = "Valenta Roland Milán"; 
+            let telepules = "Görgeteg";
+            document.getElementById("nevem").innerHTML += " " + nevem;
+            document.getElementById("telepules").innerHTML += " " + telepules;
+        }
     </script>
 </body>
 </html>

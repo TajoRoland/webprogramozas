@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>Kérem írja be hogy: webprogi</div>
+    <input type="text" name="" id="karakterInput">
+    <button onclick="fuggveny()">Küldés</button>
+    <div id="ures"></div>
+    <b><span><div id="eredmeny"></div></span></b>
+    <script>
+        /* Feladat 1308
+        Készítsen programot, amely a képernyőre ír egy sort, majd bekéri a sor minden egyes karakterét egyenként.
+        Ha rossz karaktert üt le a felhasználó, akkor jelezze ezt a felhasználónak.
+        */
+        function fuggveny()
+        {
+            const karakterErtek = document.getElementById("karakterInput").value;
+
+            if (karakterErtek === "") {
+                document.getElementById("ures").innerHTML = "Az input mező üres!";
+                return;
+            } else {
+                document.getElementById("ures").innerHTML = "";
+            }
+            
+            let igazE = true;
+            const szo = "webprogi";
+            for (let i = 0; i < szo.length; i++) {
+                if (karakterErtek[i] !== szo[i]) {
+                    igazE = false;
+                    break;
+                }
+            }
+            if (igazE && karakterErtek.length === szo.length) {
+                document.getElementById("eredmeny").innerHTML = "Minden karakter helyes volt!";
+            } else {
+                document.getElementById("eredmeny").innerHTML = "Néhány karakter hibás volt!";
+            }
+        }
+    </script>
+</body>
+</html>

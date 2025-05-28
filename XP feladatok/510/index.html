@@ -3,58 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iterációs feladat</title>
-    <style>
-        body
-        {
-            text-align: center;
-        }
-        div#eredmeny
-        {
-            font-size: 20px;
-            width: 300px;
-            height: 50px;
-            text-align: center;
-            display: inline;
-        }
-        input
-        {
-            text-align: center;
-            font-size: 20px;
-            width: 200px;
-        }
-        button
-        {
-            text-align: center;
-            font-size: 20px;
-            margin: 5px;
-            padding: 5px 10px;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
+    <input type="number" id="szamBekeres" placeholder="Adj meg egy számot!">
+    <button id="gomb">Szám hozzáadása</button>
     <div id="eredmeny"></div>
-    <br>
-    <input type="number" name="" id="szamBekeres">
-    <button type="button" id="gomb">Mehet!</button>
     <script>
-        // Írjon programot, amely bekér számokat 0 végjelig, majd kiírja a legkisebbet és a legnagyobbat.
-        const gomb = document.getElementById("gomb");
-        const szamBekeres = document.getElementById("szamBekeres");
-        const eredmeny = document.getElementById("eredmeny");
-        let szamok = [];
-        gomb.addEventListener("click", function() {
-            let szam = parseInt(szamBekeres.value);
-            szamBekeres.value = "";
-            szamBekeres.focus();
-            if (szam === 0) {
+    // Írjon programot, amely bekér számokat 0 végjelig, majd kiírja a legkisebbet és a legnagyobbat.
+    const gomb = document.getElementById("gomb");
+    const szamBekeres = document.getElementById("szamBekeres");
+    const eredmeny = document.getElementById("eredmeny");
+    let szamok = [];
+    gomb.addEventListener("click", function() {
+        let szam = parseInt(szamBekeres.value);
+        szamBekeres.value = "";
+        szamBekeres.focus();
+        if (szam === 0) {
+            if (szamok.length === 0) {
+                eredmeny.innerHTML = "Nem adott meg egyetlen számot sem!";
+            } else {
                 let min = Math.min(...szamok);
                 let max = Math.max(...szamok);
                 eredmeny.innerHTML = "A legkisebb szám: " + min + "<br>A legnagyobb szám: " + max;
-            } else {
-                szamok.push(szam);
             }
-        });
-    </script>
+        } else {
+            szamok.push(szam);
+        }
+    });
+</script>
+
 </body>
 </html>

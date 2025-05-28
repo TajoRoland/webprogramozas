@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="adatok.js"></script>
+</head>
+<body>
+<h2>Dolgozók akik 2005 után jöttek</h2>
+<button onclick="mutat()">Mutasd</button>
+
+<div id="eredmeny"></div>
+
+<script>
+function mutat() {
+  const eredmeny = document.getElementById("eredmeny");
+  eredmeny.innerHTML = "";
+
+  for (let i = 1; i < adatok.length; i++) {
+    let sor = adatok[i].replaceAll('"', '').split(";");
+    let nev = sor[1];
+    let netto = sor[5];
+    let belepes = sor[7];
+
+    let ev = parseInt(belepes.split("-")[0]);
+
+    if (ev > 2005) {
+      let elem = document.createElement("div");
+      elem.innerText = nev + " - " + netto + " Ft";
+      eredmeny.appendChild(elem);
+    }
+  }
+}
+</script>
+</body>
+</html>
